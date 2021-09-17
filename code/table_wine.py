@@ -6,8 +6,8 @@ import itertools as it
 
 from pyitlib import discrete_random_variable as drv
 
-wine_files = ["processed/wine.csv", "model/kmeans_wine.csv", "model/em_wine.csv", "model/minlp_wine.csv", "model/bandi_wine.csv",
-                "report/metric-table_wine.csv", "report/metric-table_wine.tex"]
+wine_files = ["data/wine.csv", "results/kmeans_wine.csv", "results/em_wine.csv", "results/minlp_wine.csv", "results/bandi_wine.csv",
+                "results/metric-table_wine.csv", "results/metric-table_wine.tex"]
 
 def dist_em(z_true, z_hat):
     """ Compute the error in z"""
@@ -73,7 +73,7 @@ def import_model(modelcsv):
     m = mod['value'][n:(n+K*d)].values.astype('float')
     m = np.reshape(m, (K, d))
   
-    match = re.search('model/(.+?)_', modelcsv)
+    match = re.search('results/(.+?)_', modelcsv)
     mod = {'source': match.group(1), 'z': z, 'm': m}
 
     return mod

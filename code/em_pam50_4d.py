@@ -98,4 +98,4 @@ def gmm_pam50_4d(incsv, kmeanscsv, outcsv):
     export_model(mod, outcsv)
 
 
-gmm_pam50_4d("processed/pam50-4d.csv", "model/kmeans_pam50-4d.csv", "model/em_pam50-4d.csv")
+gmm_pam50_4d("data/pam50-4d.csv", "results/kmeans_pam50-4d.csv", "results/em_pam50-4d.csv")

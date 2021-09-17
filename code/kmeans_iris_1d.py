@@ -42,4 +42,4 @@ def kmeans_iris_1d(incsv, outcsv):
     export_model(mod, outcsv, cov)
 
 
-kmeans_iris_1d("processed/iris-1d.csv","model/kmeans_iris-1d.csv")
+kmeans_iris_1d("data/iris-1d.csv","results/kmeans_iris-1d.csv")

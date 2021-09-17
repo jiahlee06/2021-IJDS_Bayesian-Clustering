@@ -98,4 +98,4 @@ def gmm_wine(incsv, kmeanscsv, outcsv):
     export_model(mod, outcsv)
 
 
-gmm_wine("processed/wine.csv", "model/kmeans_wine.csv", "model/em_wine.csv")
+gmm_wine("data/wine.csv", "results/kmeans_wine.csv", "results/em_wine.csv")

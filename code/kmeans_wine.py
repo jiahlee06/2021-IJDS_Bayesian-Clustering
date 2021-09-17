@@ -48,4 +48,4 @@ def kmeans_wine(incsv, outcsv):
     export_model(mod, outcsv, cov)
 
 
-kmeans_wine("processed/wine.csv", "model/kmeans_wine.csv")
+kmeans_wine("data/wine.csv", "results/kmeans_wine.csv")

@@ -97,4 +97,4 @@ def gmm_brca(incsv, kmeanscsv, outcsv):
     export_model(mod, outcsv)
 
 
-gmm_brca("processed/brca.csv", "model/kmeans_brca.csv", "model/em_brca.csv")
+gmm_brca("data/brca.csv", "results/kmeans_brca.csv", "results/em_brca.csv")

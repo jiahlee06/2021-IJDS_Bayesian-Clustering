@@ -13,11 +13,9 @@ from sklearn.preprocessing import normalize
 import argparse
 import replicate
 
-import matplotlib.pyplot as plt
 import random
 import scipy
 import csv
-import seaborn as sns
 
 # Load all data into python
 # Add Model from GMS file
@@ -102,7 +100,7 @@ def main(file_name, model, time_per_iter):
     gmm = ws.add_job_from_file(path+"/"+model+".gms")
     
     # populate the problem database
-    features,samples,X = read_csv_data("processed/"+file_name+".csv")
+    features,samples,X = read_csv_data("data/"+file_name+".csv")
     db = add_data_to_db(ws, features, samples, X, file_name)
 
     k = db.add_set("k", 1, "clusters")
@@ -175,14 +173,14 @@ def main(file_name, model, time_per_iter):
 
     # Initialize the model usingthe output of EM
     mod = {'z': [], 'm': [], 'p': [], 'cov': []}
-    mod_df = pd.read_csv("model/em_"+file_name+".csv", header=0)
+    mod_df = pd.read_csv("results/em_"+file_name+".csv", header=0)
 
     for index, row in mod_df.iterrows():
         param, i_str = row[0].split("_")
         eval("mod['{}'].append({})".format(param, row[1]))
     mod['z'] = np.array(mod['z'], dtype=int)
    
-    ds = pd.read_csv("processed/"+file_name+".csv", index_col=0)
+    ds = pd.read_csv("data/"+file_name+".csv", index_col=0)
     ds = ds.drop(columns=["class"], errors = 'ignore')
     ds = ds.drop(columns=["diagnosis"], errors = 'ignore')
     ds = ds.values
@@ -277,14 +275,14 @@ def main(file_name, model, time_per_iter):
                         DataFrame({'param': "f",
                                    'value': np.array([f])})],
                        axis=0, ignore_index=True)
-    mod_df.to_csv("model/minlp_"+file_name+".csv", header=True, index=False)
+    mod_df.to_csv("results/minlp_"+file_name+".csv", header=True, index=False)
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--file_name", type = str, default = "iris-4d")
     parser.add_argument("--model", type = str, default = "minlp-bayesian")
-    parser.add_argument("--time_per_iter", type = int, default = 180)
+    parser.add_argument("--time_per_iter", type = int, default = 360)
     args = parser.parse_args()
 
     main(args.file_name, args.model, args.time_per_iter)

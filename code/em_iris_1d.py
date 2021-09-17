@@ -88,5 +88,5 @@ def gmm_iris_1d(incsv, kmeanscsv, outcsv):
     export_model(mod, outcsv)
 
 
-gmm_iris_1d("processed/iris-1d.csv","model/kmeans_iris-1d.csv",
-         "model/em_iris-1d.csv")
+gmm_iris_1d("data/iris-1d.csv","results/kmeans_iris-1d.csv",
+         "results/em_iris-1d.csv")

@@ -47,4 +47,4 @@ def kmeans_brca(incsv, outcsv):
     export_model(mod, outcsv, cov)
 
 
-kmeans_brca("processed/brca.csv", "model/kmeans_brca.csv")
+kmeans_brca("data/brca.csv", "results/kmeans_brca.csv")
