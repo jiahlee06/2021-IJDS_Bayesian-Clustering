@@ -1,0 +1,23 @@
+metadata_version: 1
+name: IJDS-2021_Bayesian-Clustering
+description: We present a global optimization approach for solving a maximum a-posteriori clustering problem under a Gaussian mixture model. Since our focus is on the optimal partition of samples into clusters, we employ a Bayesian framework to analytically marginalize over the model parameters. Our approach can easily accommodate hard constraints on cluster membership and preserves the combinatorial structure of the MAP clustering problem by its formulation as a mixed-integer nonlinear optimization problem, in contrast to standard inferential methods such as expectation maximization or Markov chain Monte Carlo. An important benefit of our formulation of statistical inference as an optimization problem is the explicit quantification of the degree of suboptimality, via the optimality gap, en route to finding the globally optimal MAP clustering. Numerical experiments show that our method solves standard problems to optimality and consistently recovers high-quality clusterings as measured by the earthmover's distance and variation of information metric. Finally, we cluster a real breast cancer gene expression data set incorporating known intrinsic subtype information and find that the constraints yield more coherent and biologically meaningful clusters.
+tags:
+- Bayesian Statistics
+- mixed integer nonlinear programming
+- clustering
+authors:
+- name: Ji Ah Lee
+  affiliations:
+  - name: University of Massachusetts Amherst
+- name: Harsh Vardhan Dubey
+  affiliations:
+  - name: University of Massachusetts Amherst
+- name: Andrew C. Trapp
+  affiliations:
+  - name: Worcester Polytechnic Institute
+- name: Patrick Flaherty
+  affiliations:
+  - name: University of Massachusetts Amherst
+corresponding_contributor:
+  name: Patrick Flaherty
+  email: pflaherty@umass.edu

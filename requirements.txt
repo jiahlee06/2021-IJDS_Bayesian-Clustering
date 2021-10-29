@@ -1,0 +1,10 @@
+gurobipy==9.1.0
+ipython==7.19.0
+matplotlib==3.3.1
+mosek==9.2.49
+numpy==1.19.2
+pandas==1.1.5
+pyitlib==0.2.2
+replicate==0.2.2
+scikit-learn==0.23.2
+scipy==1.5.2
