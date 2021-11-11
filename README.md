@@ -18,12 +18,19 @@ will do.
 
 ## What is needed
 
-Software: Python 3.7, R 4.0, GAMS 33.1
+Software: Python 3.7, GAMS 33.1, R 4.0
 
 License: GAMS, Gurobi, BARON, MOSEK
 
 Python Package: IPython 7.19.0, pandas 1.1.5, numpy 1.19.2, scipy 1.5.2, gurobipy 9.1.0, mosek 9.2.49, sklearn 0.23.2, pyitlib 0.2.2, replicate 0.2.2, matplotlib 3.3.1
 
 R Library: Openxlsx 4.2.4, gplots 3.1.1, RColorBrewer 1.1
+
+(R was used only for visualization.)
+
+## Notes
+
+A Dockerfile comes with Python, necessary packages, GAMS and a demo license of GAMS. However, to fully replicate codes, a user needs to include their own licenses of GAMS, Gurobi, BARON, and MOSEK. Gurobi and MOSEK provide free academic licenses. Yet, GAMS and BARON do not.
+
 
 
