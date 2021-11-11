@@ -7,6 +7,9 @@ WORKDIR /app
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 
+#COPY example.gms example.gms
+COPY gamslice.txt /opt/gams/gams33.1_linux_x64_64_sfx/gamslice.txt
+
 # Set GAMS version 
 ENV GAMS_VERSION=33.1.0
 
@@ -24,4 +27,11 @@ RUN cd /opt/gams &&\
     chmod +x gams.exe; sync &&\
     ./gams.exe &&\
     rm -rf gams.exe 
+    
+ENV PATH "$PATH:/opt/gams/gams33.1_linux_x64_64_sfx"
+
+# Run GAMS test 
+
+#CMD [ "gams", "example.gms", "logOption=1", "--host=0.0.0.0" ]
+
 
