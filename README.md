@@ -28,9 +28,4 @@ R Library: Openxlsx 4.2.4, gplots 3.1.1, RColorBrewer 1.1
 
 (R was used only for visualization.)
 
-## Notes
-
-A Dockerfile comes with Python, necessary packages, GAMS and a demo license of GAMS. However, to fully replicate codes, a user needs to include their own licenses of GAMS, Gurobi, BARON, and MOSEK. Gurobi and MOSEK provide free academic licenses. Yet, GAMS and BARON do not.
-
-
 
